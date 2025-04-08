@@ -3,26 +3,25 @@ package PruebaB;
 import java.util.Scanner;
 
 public class Main {
-	  public static void main(String[] args) {
-	        // TODO Auto-generated method stub
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
 
-	 
-	        Scanner peter = new Scanner(System.in);
-	        System.out.println("Introduzca la base imponible");
-	        double base = peter.nextDouble();
-	        double total = 0;
+        Scanner lector = new Scanner(System.in);
+        System.out.println("Ingrese el importe sin impuestos:");
+        double importeInicial = lector.nextDouble();
+        double resultadoFinal = 0;
 
-	        
-	        System.out.println("Introduzca el tipo de IVA (general, reducido o superreducido)");
-	        String tipoIva = peter.next();
+        System.out.println("Especifique la categoría de IVA (general, reducido o superreducido):");
+        String categoriaIVA = lector.next();
 
-	        
-	        System.out.println("Introduzca el codigo promocional (nopro, mitad, meno5, o 5porc)");
-	        String codigoProm = peter.next();
+        System.out.println("Indique el tipo de descuento (nopro, mitad, meno5 o 5porc):");
+        String descuentoAplicado = lector.next();
 
-	        
-	        double iva = Iva.calcularIVA(base, tipoIva);
-	        double precioConIVA = base + iva;
-	        double precioFinal = Iva.aplicarPromocion(precioConIVA, codigoProm);
-	  }
+        // Calcular IVA y precio final
+        double valorIVA = Iva.calcularIVA(importeInicial, categoriaIVA);
+        double importeConIVA = importeInicial + valorIVA;
+        double importeFinal = Iva.aplicarPromocion(importeConIVA, descuentoAplicado);
+
+        lector.close();
+    }
 }
