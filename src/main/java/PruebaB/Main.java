@@ -17,7 +17,7 @@ public class Main {
         System.out.println("Indique el tipo de descuento (nopro, mitad, meno5 o 5porc):");
         String descuentoAplicado = lector.next();
 
-        // Calcular IVA y precio final
+   
         double valorIVA = Iva.calcularIVA(importeInicial, categoriaIVA);
         double importeConIVA = importeInicial + valorIVA;
         double importeFinal = Iva.aplicarPromocion(importeConIVA, descuentoAplicado);
