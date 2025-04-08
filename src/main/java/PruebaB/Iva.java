@@ -14,7 +14,7 @@ public class Iva {
             porcentajeIVA = 0.04;
             break;
         default:
-            porcentajeIVA = 0.0; // Tipo de IVA incorrecto
+            porcentajeIVA = 0.0; 
             break;
         }
         return base * porcentajeIVA;
@@ -36,7 +36,7 @@ public class Iva {
             descuento = precioConIVA * 0.05;
             break;
         default:
-            descuento = 0.0; // Código promocional incorrecto
+            descuento = 0.0; 
             break;
         }
         return precioConIVA - descuento;
